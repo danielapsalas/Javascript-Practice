@@ -1,4 +1,4 @@
-//Going over basic control flow statements
+//Going over basic control flow statements -  if, else, else-if, and switch
 
 //if - The if statement is used to execute a block of code only if a certain condition is true. For example:
 let x = 5;
