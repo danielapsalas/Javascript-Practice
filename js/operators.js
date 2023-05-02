@@ -1,4 +1,4 @@
-//Operators -  arithmetic, assignment, comparison, equality operators, ternary
+//Operators -  arithmetic, assignment, comparison, equality operators, ternary, logical, falsy/truthy, and operators precedence
 
 //Arithmetic Operators
 let x = 5;
