@@ -46,3 +46,23 @@ const numbers = [1, 2, 3, 4, 5];
 for (const number of numbers) {
     console.log(number);
 }
+
+
+//end of review exercises - simple exercise to solidify knowledge
+
+//1.write a function that takes two numbers and returns the maximum of the two
+let x = prompt("enter a number: ");
+let y = prompt("enter second number");
+function maxNumbers(x, y){
+    if(x > y){
+        console.log("maximum num is: ", x);
+    }else if(x < y){
+        console.log("maximum num is: ", y);
+    }else if(x == y){
+        console.log("numbers are even");
+    }else{
+        console.log("error try again...");
+    }
+}
+
+maxNumbers(x,y);
