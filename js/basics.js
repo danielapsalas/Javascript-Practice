@@ -1,4 +1,6 @@
-//going over basics
+//Basics - variables, constants, primitive types, objects, arrays, and functions
+
+console.log("Start of Basics notes");
 
 // declaring vs initializing
 let myVariable2; //declaring
@@ -68,3 +70,5 @@ function square(number){
 }
 
 console.log(square(2));
+
+console.log("End of Basics notes");
