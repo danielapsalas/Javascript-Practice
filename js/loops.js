@@ -48,11 +48,12 @@ for (const number of numbers) {
 }
 
 
+
 //end of review exercises - simple exercise to solidify knowledge
 
 //1.write a function that takes two numbers and returns the maximum of the two
-let x = prompt("enter a number: ");
-let y = prompt("enter second number");
+// let x = prompt("enter a number: ");
+// let y = prompt("enter second number");
 function maxNumbers(x, y){
     if(x > y){
         console.log("maximum num is: ", x);
@@ -65,4 +66,43 @@ function maxNumbers(x, y){
     }
 }
 
-maxNumbers(x,y);
+// maxNumbers(x,y);
+
+//2.write a function that checks if two numbers make up landscape image
+function isLandscape(width, height){
+    if(width > height){
+        console.log("image is landscape");
+    }else if(width < height){
+        console.log("image is portrait");
+    }else if(width === height){
+        console.log("image is square");
+    }else{
+        console.log("error");
+    }
+}
+
+// isLandscape(x,y);
+
+
+//3.Fizzbuzz = divisible by 3 => fizz
+//             divisible by 5 => buzz
+//             divisible by both 3 and 5 => fizzBuzz
+//             not divisible by 3 or 5 => input
+//             not a number => 'not a number'
+// let input = prompt("Enter a number: ")
+function fizzBuzz(input){
+    if(typeof input !== 'number') {
+        console.log("Not a Number");
+    }else if(input % 3 === 0 && input % 5 === 0){
+        console.log("fizzbuzz");
+    }else if(input % 3 !== 0 && input % 5 !== 0){
+        console.log(input);
+    }else if(input % 3 === 0){
+        console.log("fizz")
+    }else if(input % 5 === 0){
+        console.log("buzz");
+    }
+}
+
+fizzBuzz(7);
+
