@@ -1,3 +1,5 @@
+//Operators -  arithmetic, assignment, comparison, equality operators, ternary
+
 //Arithmetic Operators
 let x = 5;
 let y = 10;
@@ -39,6 +41,43 @@ console.log(z !== 1);
 console.log('1' == z);//the value on the left will convert z(the item on the right) into a string
 
 
-//Ternary/Conditional operators
+//Ternary/Conditional Operators
 let points = 210;
 let winTotal = points > 105 ? 'gold' : 'silver'; //if true you'll get gold if false you'll get silver
+
+
+//Logical operators
+// When using &&(and) both have to be true to be true, or else it'll be false
+// When using ||(or) only one has to be true to be true, if both are false it'll be false
+// Using !(not) will make something false
+let p = true;
+let w = false;
+console.log(p && w); // Output: false
+console.log(p || w); // Output: true
+console.log(!p); // Output: false
+
+//Logical Operators with Non-Boolean - truthy or falsy
+//When passed a non-boolean you get a falsy like below
+//falsy values
+//undefined
+//null
+//0
+//false
+//''
+//NaN
+
+//Anything that is not Falsy -> Truthy
+
+//false || 'Dani' //truthy
+//false || 1 //truthy
+
+let userColor = undefined;
+let defaultColor = 'blue';
+let currentColor = userColor || defaultColor;
+
+console.log(currentColor); //will give me a truthy because of the string 'blue'
+
+
+//operators Precedence - remember to use parenthesis to make your own precedence
+
+
