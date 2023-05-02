@@ -23,3 +23,17 @@ if (z < 3) {
 } else {
     console.log("x is greater than or equal to 6");
 }
+
+//switch - The switch statement is used to execute different blocks of code based on different conditions. For example:
+let fruit = "apple";
+switch (fruit) {
+    case "banana":
+        console.log("This is a banana.");
+        break;
+    case "apple":
+        console.log("This is an apple.");
+        break;
+    default:
+        console.log("This is not a banana or an apple.");
+        break;
+}
