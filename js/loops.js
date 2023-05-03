@@ -106,3 +106,44 @@ function fizzBuzz(input){
 
 fizzBuzz(7);
 
+//check speed -
+//speed limit = 70
+//5 over speedLimit-> 1 point
+//Math.floot(1.3)
+//12 points -> suspended
+let x = 5;
+// function checkSpeed(speed){ //original
+//     const speedLimit = 70;
+//     let points = 0;
+//     if(speed <= speedLimit){
+//         console.log("ok");
+//     }else if(speed > speedLimit){
+//         for(i = 71; i <= speed; i += 5){
+//             points += 1;
+//             console.log("points: " + points);
+//             if(points >= 12){
+//                 console.log("license suspended");
+//             }
+//         }
+//     }
+// }
+
+function checkSpeed(speed){
+    const speedLimit = 70;
+    const kmPerPoint = 5;
+
+    if(speed <= speedLimit){
+        console.log("Okay");
+    }else{
+        const points = Math.floor((speed - speedLimit) / kmPerPoint);
+        if(points >= 12){
+            console.log("License Suspended");
+        }else {
+            console.log("Points", points);
+        }
+    }
+}
+
+
+
+checkSpeed(75);
