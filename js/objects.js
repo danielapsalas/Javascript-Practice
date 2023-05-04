@@ -55,6 +55,7 @@ const circle2 = createCircle(1);
 const another = new Circle(1);
 
 
+
 //Value Types - primitives -Number, String, Boolean, Symbol(ES6), undefined, and null
 //x and y are completely independent of each-other
 //primitives are copied by their value
@@ -94,5 +95,23 @@ for(let key of Object.entries(circle)){//for of loop - returns keys as an array 
 }
 
 if('radius' in circle3){//how to check if a given property is an object
-    console.log("yes")
+    console.log("yes");
 }
+
+
+
+//Cloning an object
+// let another = {};//set an empty object - old way of doing it
+//
+// for(let key in circle3){
+//     another [key] = circle3[key];
+// }
+//example 2 of cloning an object
+let anotherCircle3 = Object.assign({}, circle3); //you can add a new property within the brackets
+//exacmple 3 of cloning an object
+let another = {...circle3}//spread operator - spreads an object - puts the properties in another object
+
+
+
+//Garbage Collector
+//unlike c or c++ we don't have to allocate memory - js has a garbage collector - memory allocation and reallocation happens automatically
