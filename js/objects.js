@@ -115,3 +115,36 @@ let another = {...circle3}//spread operator - spreads an object - puts the prope
 
 //Garbage Collector
 //unlike c or c++ we don't have to allocate memory - js has a garbage collector - memory allocation and reallocation happens automatically
+
+
+
+//Math Object -
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
+
+
+
+//String Object -
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+
+
+
+//Template Literals - `` backticks
+//\n can look messy, you can use template literals to make a new line without using /n
+const message = 'This is \n message. \'Hello\'';
+
+//Literals
+//object {}
+//booleans true, false
+//string '', ""
+//template ``
+
+//you can use a placeholder with ${put variable, math here, or function}
+const message1 = `This is my 
+                  message. 'Hello'`
+
+
+//Date Objects
+//more info https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+//You can use .set and .get ex. now.get or now.set - you can use that to change the year, you can convert it to strings aswell
+const now = new Date();//gives current day time
+const date1 = new Date();//gives current day time
