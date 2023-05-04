@@ -71,3 +71,28 @@ let b = a;
 
 a.value = 20;
 
+
+
+//enumerating properties of an object
+let circle3 = {
+    radius: 1,
+    draw(){
+        console.log('draw');
+    }
+};
+
+for(let key in circle){ //for in loop
+    console.log(key)
+}
+
+for(let key of Object.keys(circle)){//for of loop - cant use it with objects because objects aren't iterable, Object.keys returns the keys as an array of strings making it iterable
+    console.log(key);
+}
+
+for(let key of Object.entries(circle)){//for of loop - returns keys as an array of arrays
+    console.log(key);
+}
+
+if('radius' in circle3){//how to check if a given property is an object
+    console.log("yes")
+}
