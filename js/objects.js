@@ -36,10 +36,38 @@ function createCircle(radius){
 //Naming conversion for constructor functions is pascal notation
 function Circle(radius){
     this.radius = radius;//this keyword is used to reference the object that is executing this code
-    this.draw = function(){
+    this.draw = function(){ //draw and radius are properties
         console.log('draw')
     }
 }
 
-let circle1 = new Circle(1); //when you use the new operator it makes an empty object
+// let circle1 = new Circle(1); //when you use the new operator it makes an empty object
 //apparently there's no difference between the two
+
+//Constructor Property
+const circle2 = createCircle(1);
+//typing in console circle2.constructor
+//this will return our circle function that we used to create this object
+
+
+//typing in console another.constructor
+//this will return our circle function that we used to create this object
+const another = new Circle(1);
+
+
+//Value Types - primitives -Number, String, Boolean, Symbol(ES6), undefined, and null
+//x and y are completely independent of each-other
+//primitives are copied by their value
+let x = 10;
+let y = x;
+
+x = 20;
+
+//Reference Types - Objects - Objects, Function, and Array
+//the object isn't stored in the variable but in the memory, the changes are visible to the other
+//objects are copied by their reference
+let a = {value: 10};
+let b = a;
+
+a.value = 20;
+
