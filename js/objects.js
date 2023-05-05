@@ -109,7 +109,7 @@ if('radius' in circle3){//how to check if a given property is an object
 //example 2 of cloning an object
 let anotherCircle3 = Object.assign({}, circle3); //you can add a new property within the brackets
 //exacmple 3 of cloning an object
-let another = {...circle3}//spread operator - spreads an object - puts the properties in another object
+let another3 = {...circle3}//spread operator - spreads an object - puts the properties in another object
 
 
 
@@ -143,8 +143,32 @@ const message1 = `This is my
                   message. 'Hello'`
 
 
+
 //Date Objects
 //more info https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 //You can use .set and .get ex. now.get or now.set - you can use that to change the year, you can convert it to strings aswell
 const now = new Date();//gives current day time
 const date1 = new Date();//gives current day time
+
+
+
+//exercises
+
+// exercise 1.
+// make an object with three properties street, city, zipcode.
+// after you do that make a function called showAddress() that takes an address object and
+// displays all the properties along with their values
+
+let address = {
+    street: "12315 apple rd",
+    city: "San Antonio",
+    zipcode: 78245
+}
+
+function showAddress(obj){
+    for(let key in obj){ //for in loop
+        console.log(key + " : " + obj[key])
+    }
+}
+
+console.log(showAddress(address));
