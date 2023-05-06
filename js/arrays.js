@@ -72,4 +72,35 @@ let anotherNums = emptyNums;
 
 
 
-//Combining Arrays
+//Combining and slicing Arrays
+const first = [1, 2, 3];
+const second = [4, 5, 6];
+
+const combined = first.concat(second); //just adds them together(concat)
+console.log(combined);
+//rewriting above code with the spread operator
+const combined2 = [...first, ...second];//same as above
+
+const slice = combined.slice(2, 4);//this slices the array - if you leave it empty it'll give you a copy
+
+
+
+//iterating through an array
+const iteratingArray = [1, 2, 3, 4];
+
+for(let number of numbers){
+    console.log(number);
+}
+
+numbers.forEach((number,index) => console.log(index, number));//both do the same thing but the arrow function can take a second parameter
+
+
+
+//Joining Arrays
+const numJoin = [1, 2, 3];
+const joined = numJoin.join(','); //makes it a string and separates each array element with a comma
+console.log(joined);
+
+const message = 'This is my first message';
+const parts = message.split(' '); //makes the string into an array
+console.log(parts)
