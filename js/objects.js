@@ -223,3 +223,35 @@ function areSame(address1, address2){
     return address1 === address2;
 }
 console.log("areSame(): " + areSame(addressOne, addressTwo));
+
+
+
+//exercise 4 - make an object with the following properties
+
+let posts = new Post('a', 'b', 'c');
+console.log(posts);
+
+//make a constructor function
+function Post(title, body, author){
+    this.title = title;
+    this.body = body;
+    this.author = author;
+    this.views = 0;
+    this.comments = []
+    this.isLive = false;
+}
+
+
+
+//exercise 5 - make three price range projects
+//make an array with three objects
+let priceRanges = [
+    {label: '$', tooltip:'Inexpensive', minPerPerson: 0, maxPerPerson: 10},
+    {label: '$$', tooltip:'Moderate', minPerPerson: 11, maxPerPerson: 20},
+    {label: '$$$', tooltip:'Expensive', minPerPerson: 21, maxPerPerson: 50}
+];
+
+let restaurants = [
+    {averagePerPerson: 5}
+]
+
