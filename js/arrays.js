@@ -33,8 +33,43 @@ const courses = [
     {id: 2, name:'b'},
 ];
 
-let course = courses.find(function (course){
+let course = courses.find(function (course){ //predicate or a callback function
     return course.name === 'a';
 });
 
 console.log(course)//we'll get the first element that matches the criteria
+
+
+
+//Arrow functions
+//making an arrow function version of the course fallback function
+//you don't have to have parameters
+let courseArrow = courses.find(course => course.name === 'a');
+console.log(courseArrow);
+
+
+
+//Removing an Array
+let deleteNums = [1, 2, 3, 4];
+//removing the end of an array
+// let lastNum = deleteNums.pop();//output: 1,2,3
+//removing the beginning of an array
+// let firstNum = deleteNums.shift();//output 2,3
+//removing the middle of an array
+numbers.splice(2, 1); //1, 2, 4
+
+
+
+//Emptying an array
+let emptyNums = [1, 2, 3, 4];
+let anotherNums = emptyNums;
+
+//solution 1:
+//numbers = [] //this will empty `emptyNums` but not `anotherNums`, use if you have a single reference
+
+//solution 2:
+//myArray.length = 0; //this will empty both
+
+
+
+//Combining Arrays
