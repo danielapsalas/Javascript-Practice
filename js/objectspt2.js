@@ -81,3 +81,95 @@ console.log(keys);
 if('radius' in circle){
     console.log("Circle has a radius.")
 }
+
+
+
+//Abstraction - we should hide the complexity and hide the details - only show the essentials
+function CircleAbstraction(radius) {
+    this.radius = radius;
+    let defaultLocation = {x: 0, y: 0};
+    let computeOptimumLocation = function(factor){
+
+    }
+    this.draw = function () {
+        computeOptimumLocation(0.1);//scope is temporary but closure stays
+        console.log('draw');
+    }
+}
+
+
+
+//Getters and Setters
+function Circle90(radius) {
+    this.radius = radius;
+    let defaultLocation = {x: 0, y: 0};
+
+    this.defaultLocation = function (){
+        return defaultLocation;
+    };
+
+    this.draw = function () {
+        console.log('draw');
+    };
+
+    Object.defineProperty(this, 'defaultLocation', { //use `defineProperty` to define getters and setters
+        get: function() {
+            return defaultLocation;
+        },
+        set: function (value) {
+            if(!value.x || !value.y){
+                throw new Error ('Invalid location.')
+            }
+            defaultLocation = value;
+        }
+    });
+}
+
+const circle99 = new Circle90(10);
+// circle99.defaultLocation = 1;
+circle99.draw();
+
+
+
+// ex.1 make a stop watch
+function StopWatch(){
+    let startTime, endTime, running, duration = 0;
+
+    this.start = function (){
+        if(running){
+            throw new Error("Stopwatch has started")
+        }
+        running = true;
+
+        startTime = new Date();
+    }
+
+    this.stop = function (){
+        this.stop = function (){
+            if(!running){
+                throw new Error("Stopwatch has not started")
+            }
+            running = false;
+
+            endTime = new Date();
+
+            const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
+            duration += seconds;
+
+            startTime = null;
+            endTime = null;
+        }
+    }
+
+    this.reset = function (){
+        startTime = null;
+        endTime = null;
+        running = false;
+        duration = 0;
+    }
+
+    Object.defineProperty(this, "duration", {
+        get: function () { return duration;}
+    });
+}
+
