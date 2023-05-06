@@ -103,4 +103,74 @@ console.log(joined);
 
 const message = 'This is my first message';
 const parts = message.split(' '); //makes the string into an array
-console.log(parts)
+console.log(parts);
+
+
+
+//sorting an array
+const numberSort = [2, 3, 1];
+numberSort.sort();
+console.log(numberSort);//sorts it as [1, 2, 3]
+
+numberSort.reverse();
+console.log(numberSort);//sorts it as [3, 2, 1]
+
+//how about an array of objects?
+const newCourses = [
+    {id: 1, name: 'Node.js'},
+    {id: 2, name: 'Javascript'},
+]
+
+newCourses.sort(function (a, b){
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
+
+    if(nameA < nameB) return -1;
+    if(nameA > nameB) return 1;
+    return 0;
+});
+
+console.log(newCourses)
+
+
+
+//Testing the Elements of an Array
+const areTheyPositive = [1, 2, 3];
+
+const allPositive = areTheyPositive.every(function(value){ //you can use some which makes it true if it finds at least one
+    return value >= 0 ;
+})
+
+
+
+//filtering
+const num6 = [1, -1, 2, 3];
+
+const filtered = num6.filter((value => value >= 0));//copies the array but filters out what you don't want
+
+
+
+//mapping an array
+const mapNum = [1, -1, 2, 3];
+
+const items2 = mapNum
+    .filter(n => n >= 0)
+    .map(n => ({value: n}))
+console.log(items2)
+
+
+
+//Reducing an array
+const sumNum = [1, 2, 3, -1];
+
+let sum = 0;
+for(let n of sumNum)
+    sum += n;
+console.log(sum);
+
+//now do the same with reduce
+const sumTotal = sumNum.reduce((accumulator, currentValue) =>{
+    return accumulator + currentValue;
+}, 0);//you dont have to put 0
+
+console.log(sumTotal)
