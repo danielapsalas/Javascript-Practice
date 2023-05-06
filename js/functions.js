@@ -106,3 +106,52 @@ const video = {
 };
 
 video.showTags();
+
+
+
+//exercise 1
+
+function sum5(...items){
+    if(items.length === 1 && Array.isArray(items[0])){
+        items = [...items[0]];
+    }
+    return items.reduce((a, b) => a+b);
+}
+
+let sumArgs = sum5([1, 2, 3, 4]);
+
+console.log(sumArgs);
+
+
+
+//exercise 2
+const circle = {
+    radius: 1,
+    get area(){
+        return Math.PI * this.radius * this.radius;
+    }
+};
+
+console.log(circle.area);
+
+
+
+//exercise 3
+try{
+    const numbers5 = [1, 2, 3, 4];
+    const count = countOccurances(null, 1);
+    console.log(count);
+}
+catch (e) {
+    console.log(e.message);
+}
+
+function countOccurances(array, searchElement){
+    if(Array.isArray(array)){
+        throw new Error("Invalid Array");
+    }
+    return array.reduce((accumulator, current) => {
+        const occurrence = (current === searchElement) ? 1 : 0;
+        return accumulator + occurrence;
+    }, 0)
+}
