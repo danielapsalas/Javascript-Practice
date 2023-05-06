@@ -154,7 +154,7 @@ const date1 = new Date();//gives current day time
 
 //exercises
 
-// exercise 1.
+// exercise 1. - initialize an address object
 // make an object with three properties street, city, zipcode.
 // after you do that make a function called showAddress() that takes an address object and
 // displays all the properties along with their values
@@ -171,4 +171,55 @@ function showAddress(obj){
     }
 }
 
-console.log(showAddress(address));
+showAddress(address);
+
+//exercise 2 - initialize by using factory function and a constructor function
+//factory function
+function showAddress2(street, city, zipcode){
+    return {
+        street: street,
+        city: city,
+        zipcode: zipcode,
+        displayAdress(){//function() { //if a function is inside a object - we call it a method
+            console.log(
+`Street : ${street} 
+City : ${city}
+Zipcode : ${zipcode}`);
+        }
+    };
+}
+
+let firstAddress = showAddress2("Hey", "I", "Did It");
+firstAddress.displayAdress();
+
+//constructor function
+function AddressFunction(street, city, zipcode){
+    this.street = street;
+    this.city = city;
+    this.zipcode = zipcode;
+    this.address = function(){
+        console.log(`street : ${this.street} City : ${this.city} zipcode : ${this.zipcode}`)
+    }
+}
+
+let constructorAddress = AddressFunction("234 moth rd", "San Antonio", 72198);
+console.log(constructorAddress)
+
+//exercise 3 - are they equal - check to see if two objects are equal
+let addressOne = new AddressFunction('a', 'b', 'c');
+let addressTwo = new AddressFunction('a', 'b', 'c');
+
+//are there they equal?
+function areEqual(address1, address2){
+    return address1.street === address2.street &&
+            address1.city === address2.city &&
+            address1.zipcode === address2.zipcode;
+}
+
+console.log(areEqual("areEqual(): " + addressOne, addressTwo));
+//are they pointing to the same object - referencing the same object? No they are two different objects in memory
+//let address3 = address2 would make it two because its referencing an object
+function areSame(address1, address2){
+    return address1 === address2;
+}
+console.log("areSame(): " + areSame(addressOne, addressTwo));
