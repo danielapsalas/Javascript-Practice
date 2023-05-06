@@ -52,3 +52,57 @@ console.log(discount(0.1, 20, 30));
 function interest(principal, rate = 3.5, years = 5){
     return principal * rate / 100 * years;
 }
+
+
+
+//Getters and Setters
+///Getter - used to access properties in an object
+//Setter - change or mutate properties in an object
+const person = {
+    firstName: 'Dani',
+    lastName: 'Salas',
+    get fullName() {
+        if(typeof value !== 'string')
+            throw new Error("Value is not a string");
+        return `${person.firstName} ${person.lastName}`
+    },
+    set fullName(value) {
+        const parts = value.split(' ');
+        this.firstName = parts[0];
+        this.lastName = parts[1];
+    }
+};
+
+try{
+    person.fullName = ''
+}
+catch(e){
+    alert(e);//you need something to catch the error above
+}
+person.fullName = 'Milo Salas';
+
+console.log(person);
+
+//going over try-catch(error handling) in person object
+//common misconceptions, don't confuse errors with exceptions
+//ex. error object
+//const e = new Error(); //right now this is just an object
+//throw e; //Once you throw the e its an exception
+
+
+
+//The this keyword - references the object that is executing the current function
+//method -> obj
+//function -> global (window, global)
+
+const video = {
+    title: 'a',
+    tags: ['a', 'b', 'c'],
+    showTags() {
+        this.tags.forEach(tag => {
+            console.log(this.title, tag);
+        }, this)
+    }
+};
+
+video.showTags();
