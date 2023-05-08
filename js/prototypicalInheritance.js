@@ -68,3 +68,33 @@ Circle.prototype.duplicate = function () { //redefine this AFTER extend, if we d
 }
 
 const c = new Circle();//new circle onject
+
+
+
+//exercise
+
+function HtmlElement() { //parent object
+    this.click = function() {
+        console.log("clicked");
+    }
+}
+
+HtmlElement.prototype.focus = function () {//parent object
+    console.log("focused");
+}
+
+function HtmlSelectElement(items = []) {
+    this.items = items;//setting array
+
+    this.addItem = function(item) {//two method
+        this.items.push(item);//push an item to the array
+    }
+
+    this.removeItem = function(item){
+        this.items.splice(this.items.indexOf(item), 1);//delete an item
+    }
+}
+
+HtmlSelectElement.prototype = new HtmlElement();
+HtmlSelectElement.prototype.constructor = HtmlSelectElement;
+
